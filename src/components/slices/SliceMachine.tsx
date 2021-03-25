@@ -2,6 +2,8 @@ import React from 'react'
 import Text from './Text'
 import ImageGallery from './ImageGallery'
 import NewsGallery from './NewsGallery'
+import CvBlock from './CvBlock'
+import { CvBlockInterface } from '@src/utils/dataResolvers'
 
 type Props = {
   slice: any
@@ -34,6 +36,18 @@ const getProps = (slice: any) => {
           }
         }),
       }
+    case 'cv_block':
+      const block: CvBlockInterface = {
+        title: slice.primary.name_of_block.text,
+        items: slice.items.map((it: any) => {
+          return {
+            period: it.year,
+            description: it.description,
+            onGoing: it.on_going,
+          }
+        }),
+      }
+      return { ...block }
     default:
       null
   }
@@ -44,6 +58,7 @@ const SliceMapping = ({ slice }: Props) => {
     text: Text,
     image_gallery: ImageGallery,
     news_gallery: NewsGallery,
+    cv_block: CvBlock,
   }
 
   const Cmp = slices[slice.slice_type]

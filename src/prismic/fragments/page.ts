@@ -77,10 +77,6 @@ export const fragment = graphql`
         html
         text
       }
-      name_of_list {
-        html
-        text
-      }
     }
     items {
       year

@@ -1,0 +1,11 @@
+.cv-block {
+  padding-bottom: $spacer * 2;
+
+  &:not(:first-of-type) {
+    padding-top: $spacer * 2;
+  }
+  border-bottom: 1px solid lightgray;
+  p {
+    margin: 3px;
+  }
+}

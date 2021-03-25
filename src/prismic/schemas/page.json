@@ -89,13 +89,6 @@
                   "single": "heading1, heading2, heading3, heading4, heading5, heading6",
                   "label": "Name of block"
                 }
-              },
-              "name_of_list": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-                  "label": "Name of list"
-                }
               }
             },
             "repeat": {
@@ -118,39 +111,6 @@
                 "config": {
                   "default_value": false,
                   "label": "On going"
-                }
-              }
-            }
-          },
-          "education": {
-            "type": "Slice",
-            "fieldset": "Education",
-            "description": "Education CV block",
-            "icon": "school",
-            "display": "list",
-            "non-repeat": {
-              "name_of_block": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading1, heading2, heading3, heading4, heading5, heading6",
-                  "label": "Name of block",
-                  "placeholder": "Education"
-                }
-              }
-            },
-            "repeat": {
-              "period": {
-                "type": "Text",
-                "config": {
-                  "label": "Period"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, strong, em, hyperlink",
-                  "allowTargetBlank": true,
-                  "label": "Description"
                 }
               }
             }

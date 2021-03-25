@@ -72,3 +72,17 @@ export const workResolver = (node: any): WorkInterface => {
     }),
   }
 }
+
+export interface EducationInterface {
+  title: string
+  items: { period: string; description: { html: string; text: string } }[]
+}
+
+export interface CvBlockInterface {
+  title: string
+  items: {
+    period: string
+    description: { html: string; text: string }
+    onGoing: boolean
+  }[]
+}
