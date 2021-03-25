@@ -1,12 +1,17 @@
 .image-gallery {
-  display: grid;
+  display: flex;
   gap: $spacer;
-  grid-template-columns: repeat(4, 170px);
-  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: $spacer;
 
   &__item {
-    height: 170px;
-    width: 170px;
+    height: 100%;
+    width: 100%;
+    @include media-breakpoint-up('sm') {
+      height: 170px;
+      width: 170px;
+    }
+
     position: relative;
 
     &__mask {
@@ -21,6 +26,11 @@
       left: 0;
 
       h2 {
+        font-size: 40px;
+
+        @include media-breakpoint-up('sm') {
+          font-size: 20px;
+        }
         color: $white;
       }
     }

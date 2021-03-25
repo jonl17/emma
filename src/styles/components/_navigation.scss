@@ -1,13 +1,16 @@
 .navigation {
   width: 100%;
-  height: 100px;
+  height: $header-height;
 
   &__menu {
     &__item {
       color: $gray;
 
       &:not(:last-of-type) {
-        margin-right: $spacer * 4;
+        margin-right: $spacer * 2;
+        @include media-breakpoint-up('lg') {
+          margin-right: $spacer * 4;
+        }
       }
 
       &--active {

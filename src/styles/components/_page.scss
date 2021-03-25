@@ -1,2 +1,5 @@
+$offset: calc(#{$header-height} + #{$footer-height});
+
 .page {
+  min-height: calc(100vh - (#{$offset}));
 }
