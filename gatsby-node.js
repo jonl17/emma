@@ -28,19 +28,31 @@ exports.createPages = async ({ graphql, actions }) => {
   const works = await graphql(`
     {
       allPrismicWork {
-        nodes {
-          url
-          id
-          prismicId
-          uid
-          lang
-          tags
-          type
-          data {
-            title {
-              html
-              text
+        edges {
+          node {
+            url
+            id
+            prismicId
+            uid
+            lang
+            tags
+            type
+            data {
+              title {
+                html
+                text
+              }
             }
+          }
+          next {
+            uid
+            url
+            type
+          }
+          previous {
+            uid
+            url
+            type
           }
         }
       }
@@ -65,11 +77,11 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  works.data.allPrismicWork.nodes.forEach(node => {
+  works.data.allPrismicWork.edges.forEach(edge => {
     createPage({
-      path: node.url,
+      path: edge.node.url,
       component: workTemplate,
-      context: { ...node },
+      context: { ...edge.node, next: edge.next, previous: edge.previous },
     })
   })
 }

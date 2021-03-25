@@ -20,9 +20,6 @@ export const fragment = graphql`
         ... on PrismicPageBodyCvBlock {
           ...cvBlockSliceFragment
         }
-        ... on PrismicPageBodyEducation {
-          ...educationSliceFragment
-        }
         ... on PrismicPageBodyImageGallery {
           ...imageGallerySliceFragment
         }
@@ -49,23 +46,6 @@ export const fragment = graphql`
             }
           }
         }
-      }
-    }
-  }
-
-  fragment educationSliceFragment on PrismicPageBodyEducation {
-    slice_type
-    primary {
-      name_of_block {
-        html
-        text
-      }
-    }
-    items {
-      period
-      description {
-        html
-        text
       }
     }
   }

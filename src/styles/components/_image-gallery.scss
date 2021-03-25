@@ -26,11 +26,6 @@
       left: 0;
 
       h2 {
-        font-size: 40px;
-
-        @include media-breakpoint-up('sm') {
-          font-size: 20px;
-        }
         color: $white;
       }
     }

@@ -4,10 +4,12 @@ import '@src/prismic/fragments/work'
 import { workResolver } from '@src/utils/dataResolvers'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
+import linkResolver from '@src/utils/linkResolver'
 
-const Work = ({ data }: { data: any }) => {
+const Work = ({ data, pageContext }: { data: any; pageContext: any }) => {
   const work = workResolver(data.prismicWork)
-
+  console.log(pageContext)
   return (
     <>
       <Helmet>
@@ -28,6 +30,14 @@ const Work = ({ data }: { data: any }) => {
               <p className='mt-2'>{image.caption}</p>
             </div>
           ))}
+        </div>
+        <div className='d-flex justify-content-between my-3 my-lg-4'>
+          {pageContext.previous && (
+            <Link to={pageContext.previous.url}>{'<< Previous'}</Link>
+          )}
+          {pageContext.next && (
+            <Link to={pageContext.next.url}>{'Next >>'}</Link>
+          )}
         </div>
       </div>
     </>
