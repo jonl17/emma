@@ -1,0 +1,63 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Uid"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title"
+      }
+    },
+    "text": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, embed, list-item, o-list-item, o-list-item",
+        "label": "Text"
+      }
+    },
+    "year": {
+      "type": "Text",
+      "config": {
+        "label": "Year"
+      }
+    },
+    "frontpage_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "width": 170,
+          "height": 170
+        },
+        "thumbnails": [],
+        "label": "Frontpage image"
+      }
+    },
+    "images": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Image"
+            }
+          },
+          "caption": {
+            "type": "Text",
+            "config": {
+              "label": "Caption"
+            }
+          }
+        },
+        "label": "Images"
+      }
+    }
+  }
+}

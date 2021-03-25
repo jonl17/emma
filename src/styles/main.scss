@@ -1,0 +1,21 @@
+@import './config/variables';
+
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+@import './config/typo';
+
+@import './components/navigation';
+@import './components/image-gallery';
+@import './components/text';
+
+@import './utils/glob-classes.scss';
+
+body a {
+  text-decoration: none;
+  color: $black;
+
+  &:hover {
+    text-decoration: none;
+    color: $black;
+  }
+}

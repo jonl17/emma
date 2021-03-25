@@ -1,0 +1,34 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2, heading3, heading4, heading5, heading6",
+        "label": "Title",
+        "placeholder": "Navigation"
+      }
+    },
+    "links": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "link": {
+            "type": "Link",
+            "config": {
+              "select": "document",
+              "customtypes": ["page", "homepage"],
+              "label": "Link"
+            }
+          },
+          "link_label": {
+            "type": "Text",
+            "config": {
+              "label": "Link label"
+            }
+          }
+        },
+        "label": "Links"
+      }
+    }
+  }
+}

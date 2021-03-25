@@ -1,0 +1,28 @@
+.image-gallery {
+  display: grid;
+  gap: $spacer;
+  grid-template-columns: repeat(4, 170px);
+  justify-content: center;
+
+  &__item {
+    height: 170px;
+    width: 170px;
+    position: relative;
+
+    &__mask {
+      height: 100%;
+      width: 100%;
+      background: rgba($black, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      h2 {
+        color: $white;
+      }
+    }
+  }
+}

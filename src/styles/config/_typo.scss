@@ -1,0 +1,23 @@
+@font-face {
+  font-family: Balkan;
+  src: url('./fonts/Balkan.otf');
+  font-weight: 400;
+}
+
+body {
+  * {
+    font-family: Balkan;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    color: gray;
+  }
+}
