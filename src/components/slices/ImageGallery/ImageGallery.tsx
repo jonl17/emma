@@ -35,14 +35,14 @@ const GalleryItem = ({ work }: ItemProps) => {
 
       {/* desktop mask only visible on mouseover */}
       {maskVisible && (
-        <div className='image-gallery__item__mask d-none d-lg-flex'>
-          <h2>{work.title}</h2>
+        <div className='image-gallery__item__mask d-lg-flex'>
+          <h2 className='text-center'>{work.title}</h2>
         </div>
       )}
 
       {/* mobile mask always visble */}
       <div className='image-gallery__item__mask d-flex d-lg-none'>
-        <h2>{work.title}</h2>
+        <h2 className='text-center'>{work.title}</h2>
       </div>
     </Link>
   )
