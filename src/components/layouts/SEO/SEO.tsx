@@ -18,8 +18,6 @@ const SEO = () => {
   `)
   const { siteMetadata: meta } = data.site
 
-  console.log(meta)
-
   return (
     <Helmet>
       <meta charSet='utf-8' />
