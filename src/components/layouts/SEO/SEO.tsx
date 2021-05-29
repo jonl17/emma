@@ -1,6 +1,6 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
 const SEO = () => {
   const data = useStaticQuery(graphql`
@@ -9,6 +9,9 @@ const SEO = () => {
         siteMetadata {
           title
           favicon
+          description
+          image
+          keywords
         }
       }
     }
@@ -17,8 +20,19 @@ const SEO = () => {
 
   return (
     <Helmet>
+      <meta charSet='utf-8' />
+      <meta name='viewport' content='width=device-width, initial-scale=1' />
+
       <title>{meta.title}</title>
-      <link href={meta.favicon} type="image/png" rel="icon"></link>
+      <link rel='icon' href={meta.favicon.url} type='image/png' />
+
+      <meta property='description' content={meta.description} />
+
+      <meta property='og:image' content={meta.image} />
+      <meta property='og:description' content={meta.description} />
+      <meta name='twitter:description' content={meta.description} />
+      <meta name='twitter:image' content={meta.image} />
+      <meta name='twitter:card' content='summary_large_image' />
     </Helmet>
   )
 }

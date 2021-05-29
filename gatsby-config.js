@@ -10,6 +10,11 @@ module.exports = {
   siteMetadata: {
     title: `Emma Heiðarsdóttir`,
     favicon: './icon.png',
+    description:
+      'Emma Heiðarsdóttir is a visual artist based in Reykjavík, Iceland.',
+    image: './emma-share-image.jpg',
+    keywords:
+      'Emma Heiðarsdóttir, Visual artist, Iceland art scene, Contemporary art.',
   },
   plugins: [
     'gatsby-plugin-sass',
