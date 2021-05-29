@@ -25,6 +25,7 @@ const getProps = (slice: any) => {
               image: data.frontpage_image,
               url,
               title: data.title.text,
+              video: data.frontpage_video,
             }
           }),
       }

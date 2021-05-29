@@ -9,6 +9,9 @@ interface Props {
     }
     url: string
     title: string
+    video?: {
+      url: string | null
+    }
   }[]
 }
 
@@ -19,11 +22,15 @@ interface ItemProps {
     image: {
       fluid: FluidObject | FluidObject[]
     }
+    video?: {
+      url: string | null
+    }
   }
 }
 
 const GalleryItem = ({ work }: ItemProps) => {
   const [maskVisible, setMaskVisible] = useState(false)
+  console.log(work.video)
   return (
     <Link
       to={work.url}
@@ -31,7 +38,11 @@ const GalleryItem = ({ work }: ItemProps) => {
       onMouseEnter={() => setMaskVisible(true)}
       onMouseLeave={() => setMaskVisible(false)}
     >
-      <Img fluid={work.image.fluid} />
+      {work.video && work.video.url ? (
+        <video autoPlay muted loop playsInline src={work.video.url}></video>
+      ) : (
+        <Img fluid={work.image.fluid} />
+      )}
 
       {/* desktop mask only visible on mouseover */}
       {maskVisible && (

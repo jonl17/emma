@@ -40,6 +40,9 @@ export const fragment = graphql`
                   ...GatsbyPrismicImageFluid
                 }
               }
+              frontpage_video {
+                url
+              }
               title {
                 text
               }

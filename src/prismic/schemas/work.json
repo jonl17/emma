@@ -37,6 +37,14 @@
         "label": "Frontpage image"
       }
     },
+    "frontpage_video": {
+      "type": "Link",
+      "config": {
+        "select": "media",
+        "label": "Frontpage video",
+        "placeholder": "If a video is provided, it will override the image."
+      }
+    },
     "images": {
       "type": "Group",
       "config": {
@@ -44,7 +52,9 @@
           "image": {
             "type": "Image",
             "config": {
-              "constraint": {},
+              "constraint": {
+                "width": 750
+              },
               "thumbnails": [],
               "label": "Image"
             }

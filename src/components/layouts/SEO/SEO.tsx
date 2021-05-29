@@ -22,12 +22,9 @@ const SEO = () => {
     <Helmet>
       <meta charSet='utf-8' />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
-
       <title>{meta.title}</title>
       <link rel='icon' href={favicon} type='image/png' />
-
       <meta property='description' content={meta.description} />
-
       <meta property='image' content={image} />
       <meta property='og:image' content={image} />
       <meta property='og:description' content={meta.description} />
