@@ -22,6 +22,9 @@ export const fragment = graphql`
             ...GatsbyPrismicImageFluid
           }
         }
+        video {
+          url
+        }
       }
       year
     }

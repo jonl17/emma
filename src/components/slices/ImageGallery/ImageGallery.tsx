@@ -30,7 +30,7 @@ interface ItemProps {
 
 const GalleryItem = ({ work }: ItemProps) => {
   const [maskVisible, setMaskVisible] = useState(false)
-  console.log(work.video)
+
   return (
     <Link
       to={work.url}

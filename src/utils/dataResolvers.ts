@@ -51,6 +51,9 @@ export interface WorkInterface {
     fluid: FluidObject
     alt: string
     caption: string
+    video: {
+      url: string | null
+    }
   }[]
   year: string
 }
@@ -67,7 +70,7 @@ export const workResolver = (node: any): WorkInterface => {
       return {
         fluid: x.image.fluid,
         alt: x.image.alt,
-        caption: x.caption,
+        ...x,
       }
     }),
   }

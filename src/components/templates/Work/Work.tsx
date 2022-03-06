@@ -5,11 +5,10 @@ import { workResolver } from '@src/utils/dataResolvers'
 import Img from 'gatsby-image'
 import { Helmet } from 'react-helmet'
 import { Link } from 'gatsby'
-import linkResolver from '@src/utils/linkResolver'
 
 const Work = ({ data, pageContext }: { data: any; pageContext: any }) => {
   const work = workResolver(data.prismicWork)
-  console.log(pageContext)
+  console.log(work)
   return (
     <>
       <Helmet>
@@ -23,10 +22,26 @@ const Work = ({ data, pageContext }: { data: any; pageContext: any }) => {
         </div>
         <div dangerouslySetInnerHTML={{ __html: work.text.html }} />
 
-        <div>
+        <div className='work__display'>
           {work.images.map((image, i) => (
             <div key={i} className='mt-2 mt-lg-4'>
-              <Img fluid={image.fluid} alt={image.alt} />
+              {image.video.url ? (
+                <video
+                  autoPlay
+                  muted
+                  playsInline
+                  loop
+                  className='w-100 h-100 work__video'
+                >
+                  <source src={image.video.url}></source>
+                </video>
+              ) : (
+                <Img
+                  className='h-100 w-100'
+                  fluid={image.fluid}
+                  alt={image.alt}
+                />
+              )}
               <p className='mt-2'>{image.caption}</p>
             </div>
           ))}
