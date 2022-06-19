@@ -97,6 +97,9 @@ export const fragment = graphql`
       artist_photo {
         url
         alt
+        fluid {
+          ...GatsbyPrismicImageFluid
+        }
       }
     }
   }

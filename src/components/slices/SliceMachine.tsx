@@ -14,6 +14,7 @@ const getProps = (slice: any) => {
     case 'text':
       return {
         html: slice.primary.text.html,
+        artistPhoto: slice.primary.artist_photo,
       }
     case 'image_gallery':
       return {
